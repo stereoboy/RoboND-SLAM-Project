@@ -3,5 +3,6 @@
 <!-- For visualising your robots map bulding in RVIZ -->
 
 <launch>
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find slam_project)/launch/config/robot_slam.rviz"/>
+  <arg name="rvizconfig" default="$(find slam_project)/launch/Rvizconfig.rviz" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" respawn="false"/>
 </launch>
